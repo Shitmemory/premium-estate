@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import HeroSection from "./hero";
-import NextSection from "../next-section";
-import Loader from "@/components/loading";
+import SocialProof from "./social-proof";
+import Loader from "@/components/layout/loading";
 import FeaturedSection from "./featured-section";
 
 export default function HeroWrapper() {
   const nextSectionRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const featuredRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -83,8 +83,7 @@ export default function HeroWrapper() {
           videoRef={videoRef}
           ready={!loading}
         />
-        <NextSection ref={nextSectionRef} />
-
+        <SocialProof ref={nextSectionRef} scrollTargetRef={featuredRef} />
         <FeaturedSection ref={featuredRef} />
       </div>
     </main>

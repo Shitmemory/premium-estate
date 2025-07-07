@@ -8,7 +8,7 @@ type Property = {
 
 export default function PropertyCard({ property }: { property: Property }) {
   return (
-    <div className="group relative overflow-hidden border bg-white">
+    <div className="group relative overflow-hidden bg-white">
       <img
         src={property.image}
         alt="Property image"

@@ -23,7 +23,7 @@ const HeroSection = ({ scrollTargetRef, videoRef, ready }: HeroProps) => {
         className="absolute bottom-0 left-0 w-full h-[25%] z-20 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 65%,rgb(0, 0, 0) 80%)",
+            "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 65%,rgb(23, 23, 23) 93%)",
         }}
       />
       <video

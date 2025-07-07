@@ -5,8 +5,15 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { HiChevronDown } from "react-icons/hi";
 
-export default function TestimonialsSection() {
+interface TestimonialsProps {
+  scrollTargetRef: React.RefObject<HTMLElement>;
+}
+
+export default function TestimonialsSection({
+  scrollTargetRef,
+}: TestimonialsProps) {
   const testimonials = [
     {
       name: "Sarah Mitchell",
@@ -61,8 +68,14 @@ export default function TestimonialsSection() {
     (currentPage + 1) * testimonialsPerPage
   );
 
+  const scrollToNext = () => {
+    if (scrollTargetRef.current) {
+      scrollTargetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="text-white py-20 px-4 min-h-screen relative z-10 bg-black">
+    <section className="text-white py-20 px-4 min-h-screen relative z-30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-wide mt-55">
@@ -74,7 +87,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Fade in grid container only */}
+        {/* Testimonials */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -85,14 +98,13 @@ export default function TestimonialsSection() {
           {currentTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative group border border-gray-800 rounded-lg p-8 hover:bg-gray-900/70 transition-all duration-300 overflow-hidden"
+              className="relative group border border-gray-700 rounded-lg p-8 hover:bg-gray-900/70 transition-all duration-300 overflow-hidden"
               style={{
                 backdropFilter: "blur(4px)",
                 WebkitBackdropFilter: "blur(4px)",
                 backgroundColor: "rgba(24,24,24,0.5)",
               }}
             >
-              {/* Corners */}
               {index === 1 ? (
                 <>
                   <Corner top right />
@@ -148,7 +160,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-800 pt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-600 pt-16">
           <Stat label="Properties Sold" value="500+" />
           <Stat label="Total Sales Value" value="£2.5B+" />
           <Stat label="Client Satisfaction" value="98%" />
@@ -161,6 +173,33 @@ export default function TestimonialsSection() {
             Book Your Free Valuation
           </button>
         </div>
+      </div>
+
+      {/* Chevron + Label */}
+      <div className="absolute bottom-10 z-30 w-full flex flex-col items-center">
+        <motion.h3
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-white text-lg font-semibold mb-4"
+        >
+          <button onClick={scrollToNext} className="hover:bg-muted">
+            Featured Properties
+          </button>
+        </motion.h3>
+
+        <motion.button
+          onClick={scrollToNext}
+          whileHover={{ scale: 1.1, y: 2 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Scroll to Featured Properties"
+          className="text-white"
+        >
+          <HiChevronDown
+            size={39}
+            className="animate-bounce text-3xl hover:text-gray-300 transition cursor-pointer"
+          />
+        </motion.button>
       </div>
     </section>
   );
