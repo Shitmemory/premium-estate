@@ -9,7 +9,7 @@ interface HeroProps {
   ready: any;
 }
 
-const HeroSection = ({ scrollTargetRef, videoRef, ready }: HeroProps) => {
+const HeroSection = ({ scrollTargetRef, videoRef, ready }: any) => {
   const scrollToNext = () => {
     if (scrollTargetRef.current) {
       scrollTargetRef.current.scrollIntoView({ behavior: "smooth" });

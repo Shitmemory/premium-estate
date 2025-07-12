@@ -11,9 +11,7 @@ interface TestimonialsProps {
   scrollTargetRef: React.RefObject<HTMLElement>;
 }
 
-export default function TestimonialsSection({
-  scrollTargetRef,
-}: TestimonialsProps) {
+export default function TestimonialsSection({ scrollTargetRef }: any) {
   const testimonials = [
     {
       name: "Sarah Mitchell",

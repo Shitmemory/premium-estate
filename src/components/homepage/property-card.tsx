@@ -6,7 +6,7 @@ type Property = {
   status?: "new" | "under-offer";
 };
 
-export default function PropertyCard({ property }: { property: Property }) {
+export default function PropertyCard({ property }: { property: any }) {
   return (
     <div className="group relative overflow-hidden bg-white">
       <img
