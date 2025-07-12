@@ -180,11 +180,7 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white text-lg font-semibold mb-4"
-        >
-          <button onClick={scrollToNext} className="hover:text-gray-300">
-            Featured Properties
-          </button>
-        </motion.h3>
+        ></motion.h3>
 
         <motion.button
           onClick={scrollToNext}
