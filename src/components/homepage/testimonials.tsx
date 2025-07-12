@@ -166,11 +166,7 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <button className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
-            Book Your Free Valuation
-          </button>
-        </div>
+        <div className="text-center mt-16"></div>
       </div>
 
       {/* Chevron + Label */}
