@@ -73,7 +73,7 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
   };
 
   return (
-    <section className="text-white py-20 px-4 min-h-screen relative z-30">
+    <section className="text-white py-20 pb-32 px-4 min-h-screen relative z-30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-wide mt-55">
@@ -166,18 +166,22 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16"></div>
+        <div className="text-center mt-16">
+          <button className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
+            Book Your Free Valuation
+          </button>
+        </div>
       </div>
 
       {/* Chevron + Label */}
-      <div className="absolute bottom-10 z-30 w-full flex flex-col items-center">
+      <div className="absolute bottom-24 md:bottom-20 lg:bottom-16 z-30 w-full flex flex-col items-center">
         <motion.h3
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white text-lg font-semibold mb-4"
         >
-          <button onClick={scrollToNext} className="hover:bg-muted">
+          <button onClick={scrollToNext} className="hover:text-gray-300">
             Featured Properties
           </button>
         </motion.h3>
