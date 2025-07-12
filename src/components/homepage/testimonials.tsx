@@ -166,11 +166,6 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <button className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
-            Book Your Free Valuation
-          </button>
-        </div>
       </div>
 
       {/* Chevron + Label */}
@@ -180,7 +175,11 @@ export default function TestimonialsSection({ scrollTargetRef }: any) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white text-lg font-semibold mb-4"
-        ></motion.h3>
+        >
+          <button onClick={scrollToNext} className="hover:text-gray-300">
+            Featured Properties
+          </button>
+        </motion.h3>
 
         <motion.button
           onClick={scrollToNext}
