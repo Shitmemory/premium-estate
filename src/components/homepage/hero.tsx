@@ -5,7 +5,7 @@ import { HiChevronDown } from "react-icons/hi";
 
 interface HeroProps {
   scrollTargetRef: React.RefObject<HTMLDivElement | null>;
-  videoRef: React.RefObject<HTMLVideoElement>;
+  videoRef: React.RefObject<HTMLVideoElement | null>;
   ready: any;
 }
 
