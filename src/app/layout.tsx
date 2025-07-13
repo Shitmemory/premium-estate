@@ -31,7 +31,7 @@ export default function RootLayout({
         <Navbar />
         <div
           id="main-content"
-          className="transition-all duration-700 ease-in-out "
+          className="transition-all duration-700 ease-in-out overflow-hidden"
         >
           {children}
         </div>

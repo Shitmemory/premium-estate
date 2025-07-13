@@ -45,10 +45,7 @@ export default function HeroWrapper() {
   }, []);
 
   return (
-    <main
-      id="page-wrapper"
-      className="relative h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
-    >
+    <main className="relative h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden">
       {/* Loading Overlay */}
       <div
         className={`fixed inset-0 z-[100] bg-black transition-opacity duration-500 ${
@@ -70,7 +67,6 @@ export default function HeroWrapper() {
 
       {/* Main Content */}
       <div
-        id="main-content"
         className="transition-all duration-500 relative z-10"
         style={{
           willChange: "transform, opacity",
